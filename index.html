@@ -106,8 +106,7 @@
                     referenciadas antes de su declaración en el código.
                     Reasignación y redeclaración: Se puede reasignar y redeclarar dentro del mismo ámbito.
                 </p>
-                <code>
-                    var x = 10;
+                <code> var x = 10;
                     console.log(x);
                 </code>
                 <p>
@@ -117,16 +116,29 @@
                     antes de la declaración genera un error.
                     Reasignación y no redeclaración: Se puede reasignar pero no redeclarar en el mismo ámbito.
                 </p>
-                <code>
-                    let y= 20;
+                <code>let y= 20;
                     if (true) {
                         let y = 30; // diferente 'y'
                         console.log(y); // 30
                     }
                     console.log(y); // 20
                 </code>
+                <p>
+                    'const':
+                    Ámbito: Bloque, al igual que 'let'.
+                    Inmutabilidad: Una vez asignada, una variable 'const' no puede ser reasignada.
+                    Objetos y arrays: Aunque no se puede reasignar la referencia, se pueden modificar las propiedades de un
+                    objeto o los elementos de un array.
+                </p>
+                <code> const z = 10;
+                    const persona = {nombre: 'Carlos'};
+                    persona.nombre = 'Juan';
+                </code>
 
                 <p class="subtitulo">Tipos de Datos</p>
+                <p>
+                    JavaScript soporta varios tipos de datos:
+                </p>
                 <p class="subtitulo">Conversión de Tipos</p>
                 <p class="subtitulo">Segundo proyecto: Crear una calculadora de edad basada en el año de nacimiento</p>
                 <code>
