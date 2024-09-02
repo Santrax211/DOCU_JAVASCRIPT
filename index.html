@@ -40,19 +40,50 @@
                     lenguajes principales del desarrollo web junto con HTML y CSS.
                 </p>
                 <p>
-                    Características principales:
-                    Lenguaje de alto nivel: Diseñado para ser fácil de usar y entender.
-                    No compilado: Se ejecuta directamente en el navegador.
-                    Event-driven: Basado en eventos, lo que permite responder a interacciones del usuario en tiempo real.
-                    Dynamic typing: Los tipos de datos son determinados en tiempo de ejecución, no en tiempo de compilación.
+                    Este lenguaje de alto nivel, interpretado y basado en el paradigma de programación orientada a objetos,
+                    aunque también admite programación funcional. Es el lenguaje por excelencia para la web, utilizado tanto en
+                    el lado del cliente (frontend) como en el lado del servidor (backend) con tecnologías como Node.js.
                 </p>
+                
                 <p class="subtitulo">Historia y Evolución</p>
                 <p>
-                    1995: JavaScript fue creado por Brendan Eich en Netscape. Inicialmente llamado "Mocha", luego "LiveScript" y finalmente "JavaScript".
-                    1997:
+                    Fue creado en 1995 por Brendan Eich mientras trabajaba en Netscape Communications. Originalmente llamado "Mocha",
+                    luego "LiveScript", finalmente fue renombrado a "JavaScript" para aprovechar la popularidad de Java en ese momento,
+                    aunque no guarda relación directa con Java.
                 </p>
+                <p>
+                    Hitos importantes:
+                    ECMAScript 3 (1999): Se establecieron las bases del lenguaje moderno.
+                    ECMAScript 5 (2009): Introdujo características como el modo estricto y métodos de arrays modernos.
+                    ECMAScript 6 (2015): También conocido como ES6 o ES2015, introdujo mejoras importantes como 'let', 'const', clases,
+                    módulos y funciones flecha.
+                    ECMAScript 2020 y 2021: Continuaron la evolución con la adición de características como el encadenamiento opcional,
+                    Biglnt, y módulos dinámicos.
+                </p>
+
                 <p class="subtitulo">Características Clave</p>
+                <p>
+                    Lenguaje de scripting: no necesita ser compilado antes de ser ejecutado.
+                    Interpretado: ejecutado directamente por el navegador o el motor de JavaScript sin necesidad de compilación.
+                    Dinamismo: soporta tipos dinámicos, lo que permite cambiar el tipo de las variables en tiempo de ejecución.
+                    Event-driven: es altamente asíncrono y basado en eventos, lo que permite crear aplicaciones interactivas que
+                    reaccionan a las acciones del usuario.
+                    Compatibilidad multiplataforma: es compatible con todos los navegadores modernos y puede ser ejecutado en una 
+                    variedad de dispositivos.
+                </p>
+
                 <p class="subtitulo">¿Cómo funciona JavaScript en el navegador?</p>
+                <p>
+                    JavaScript se ejecuta en el entorno del navegador, interactuando con el Documento de Modelo de Objetos (DOM) para 
+                    manipular la estructura y el contenido de la página web. Cada navegador incluye un motor de 
+                    JavaScript (como V8 en Chrome) que interpreta y ejecuta el código JavaScript.
+                    
+                    Interacción con HTML y CSS: JavaScript puede modificar el contenido HTML y CSS para crear experiencias dinámicas.
+                    Eventos: JavaScript permite escuchar y responder a eventos del usuario, como clics, teclas presionadas o desplazamientos.
+                    Comunicación con servidores: A través de AJAX y Fetch API, JavaScript puede enviar y recibir datos del servidor sin recargar 
+                    la página.
+                </p>
+
                 <p class="subtitulo">Primer proyecto: Crear una página web simple que salude al usuario</p>
                 <code>
                     
@@ -64,6 +95,37 @@
             <header>Variables y Tipos de Datos</header>
             <article>
                 <p class="subtitulo">Declaración y Ámbito de Variables</p>
+                <p>
+                    En JavaScript, existen tres formas principales de declarar variables: ´var´,´let´ y ´const´. 
+                </p>
+                <p>    
+                    'var':
+                    Ámbito: Función. Si se declara dentro de una función, es accesible solo dentro de esa función. Si se declara fuera de cualquier
+                    función, se convierte en global.
+                    Hoisting: Las variable declaradas con 'var' se elevan al comienzo de su contexto, lo que significa que pueden ser
+                    referenciadas antes de su declaración en el código.
+                    Reasignación y redeclaración: Se puede reasignar y redeclarar dentro del mismo ámbito.
+                </p>
+                <code>
+                    var x = 10;
+                    console.log(x);
+                </code>
+                <p>
+                    'let':
+                    Ámbito: Bloque. Es limitada al bloque en el que se declara (por ejemplo, dentro de un 'if' o 'for').
+                    Hoisting: Las variables 'let' también se elevan, pero no se inicializan, lo que significa que intentar usarlas
+                    antes de la declaración genera un error.
+                    Reasignación y no redeclaración: Se puede reasignar pero no redeclarar en el mismo ámbito.
+                </p>
+                <code>
+                    let y= 20;
+                    if (true) {
+                        let y = 30; // diferente 'y'
+                        console.log(y); // 30
+                    }
+                    console.log(y); // 20
+                </code>
+
                 <p class="subtitulo">Tipos de Datos</p>
                 <p class="subtitulo">Conversión de Tipos</p>
                 <p class="subtitulo">Segundo proyecto: Crear una calculadora de edad basada en el año de nacimiento</p>
