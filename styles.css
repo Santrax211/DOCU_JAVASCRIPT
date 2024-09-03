@@ -6,6 +6,10 @@ html, body {
     line-height: 1.5;
 }
 
+body {
+    cursor: url("img/puntero.png"), auto;
+}
+
 #navbar {
     position: fixed;
     min-width: 290px;
@@ -13,8 +17,9 @@ html, body {
     left: 0px;
     width: 300px;
     height: 100%;
-    border-right: solid;
-    border-color: rgba(0, 22, 22, 0.4);
+    border-right: 1px solid rgba(0, 22, 22, 0.4);
+    /*border-right: solid;
+    border-color: rgba(0, 22, 22, 0.4);*/
 }
 
 header {
@@ -27,7 +32,7 @@ header {
   
   #main-doc header {
     text-align: left;
-    margin: 0px;
+    margin: 0;
   }
   
   #navbar ul {
@@ -52,6 +57,11 @@ header {
     text-decoration: none;
     cursor: pointer;
   }
+
+  #navbar a:hover {
+    background-color: rgba(0, 22, 22, 0.1); /* Efecto hover */
+    color: #000; /* Cambia color del texto */
+}
   
   #main-doc {
     position: absolute;
