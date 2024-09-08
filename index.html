@@ -21,6 +21,7 @@
             <li><a href="#estructuras_de_control" class="nav-link">Estructuras de Control</a></li>
             <li><a href="#funciones_y_programacionn_modular" class="nav-link">Funciones y Programación Modular</a></li>
             <li><a href="#manipulacion_del_dom" class="nav-link">Manipulación del DOM</a></li>
+            <li><a href="#eventos" class="nav-link">Eventos en JavaScript</a></li>
             <li><a href="#programacion_orientada_a_objetos" class="nav-link">Programación Orientada a Objetos</a></li>
             <li><a href="#asincronismo_en_javascript" class="nav-link">Asincronismo en JavaScript</a></li>
             <li><a href="#patrones_de_diseño" class="nav-link">Patrones de Diseño y Buenas Prácticas</a></li>
@@ -298,11 +299,43 @@
         </section>
 
         <section class="main-section" id="funciones_y_programacionn_modular">
-            <header>Funciones y Programación Modular</header>
+            <header>Funciones y Ámbito</header>
             <article>
                 <p class="subtitulo">Definición de Funciones</p>
-                <p class="subtitulo">Parámetros y Retorno de Valores</p>
-                <p class="subtitulo">Ámbito de Variables y Closures</p>
+                <p>
+                    Una función es un bloque de código diseñado con el objetivo de realizar una tarea específica. En JavaScript,
+                    las funciones son ciudadanos de primera clase, lo que significa que pueden ser asignadas a variables, pasadas como
+                    argumentos a otras funciones, y retornadas desde otras funciones.
+                </p>
+                <p class="subtitulo">Declaración de Función</p>
+                <p>Las funciones pueden ser declaradas con la palabra clave 'function'.</p>
+                <code>function sumar(a, ){
+                    return a + b;    
+                } </code>
+                <p class="subtitulo">Expresión de Función</p>
+                <p>
+                    Las funciones también pueden ser definidas como expresiones. Estas funciones pueden ser anónimas o tener un nombre.
+                </p>
+                <code>const sumar = function(a, b){
+                    return a+b;    
+                }; </code>
+                <p class="subtitulo">Funciones Flecha (Arrow Functions)</p>
+                <p>Introducidas en ES6, las funciones flecha ofrecen una sintaxis más compacta y tienen un comportamiento léxico del 'this'.</p>
+                <code>const sumar = (a, b) => a + b;</code>
+                <p class="subtitulo">Ámbito (Scope)</p>
+                <p>El ámbito define la accesibilidad (visibilidad) de variables y funciones en diferentes partes del código.
+                    <ol>Ámbito Global: Variables y funciones definidas fuera de cualquier función tienen un ámbito global y son accesibles desde cualquier parte del código.</ol>
+                    <ol>Ámbito Local (de Función): Variables declaradas dentro de una función son locales y solo son accesibles dentro de esa función.</ol>
+                    <ol>Ámbito de Bloque: Las variables declaradas con 'let' o 'const' dentro de un bloque ({}) solo son accesibles dentro de ese bloque.</ol>
+                    <code>function ejemplo() {
+                        let x = 10;  // Ámbito local
+                        if (true) {
+                            let y = 20;  // Ámbito de bloque
+                            console.log(y);  // 20
+                        }
+                        console.log(x);  // 10
+                        // console.log(y);  // Error, y no está definido en este ámbito
+                    }</code>
                 <p class="subtitulo">Cuarto proyecto: Crear una función que calcule el área de un círculo</p>
                 <code>
 
@@ -313,13 +346,74 @@
         <section class="main-section" id="manipulacion_del_dom">
             <header>Manipulación del DOM</header>
             <article>
-                <p class="subtitulo">Acceso y Modificación de Elementos del DOM</p>
-                <p class="subtitulo">Eventos y Manejo de Eventos</p>
-                <p class="subtitulo">Creación y Eliminación de Elementos</p>
+                <p>
+                    El Document Object Model (DOM) es una interfaz que representa los documentos HTML y XML en forma de un árbol estructurado donde cada nodo es 
+                    un objeto que representa una parte del documento.
+                </p>
+                <p class="subtitulo">Seleccionar Elementos</p>
+                <p>Puedes seleccionar elementos HTML para manipularlos usando JavaScript.</p>
+                <ol>getElementById: Selecciona un elemento por su 'id'.
+                    <code>const elemento = document.getElementById('miElemento');</code>
+                </ol>
+                <ol>getElementsByClassName: Selecciona todos los elementos con una clase específica.
+                    <code>const elementos = document.getElementsByClassName('miClase');</code>
+                </ol>
+                <ol>querySelector: Selecciona el primer elemento que coincide con un selector CSS
+                    <code>const elemento = document.querySelector('.miClase');</code>
+                </ol>
+                <ol>querySelectorAll: Selecciona todos los elementos que coinciden con un selector CSS.
+                    <code>const elementos = document.querySelectorAll('.miClase');</code>
+                </ol>
+                <p class="subtitulo">Modificar Contenido</p>
+                <p>Puedes cambiar el contenido de los elementos seleccionados usando propiedades como 'innerHTML' y 'textContent'.</p>
+                <ol>innerHTML: Establece o devuelve el contenido HTML de un elemento.
+                    <code>elemento.innerHTML = '<p>Nuevo contenido</p>';</code>
+                </ol>
+                <ol>textContent: Establece o devuelve el contenido textual de un elemento, sin formato HTML.
+                    <code>elemento.textContent = 'Nuevo texto';</code>
+                </ol>
+                <p class="subtitulo">Modificar Atributos</p>
+                <p>Puedes modificar los atributos de los elementos HTML.</p>
+                <ol>setAttribute: Establece un nuevo atributo o cambia el valor de un atributo existente en un elemento seleccionado.
+                    <code>elemento.setAttribute('class', 'nuevaClase');</code>
+                </ol>
+                <ol>getAttribute: Obtiene el valor de un atributo de un elemento.
+                    <code>const valor = elemento.getAttribute('class');</code>
+                </ol>
+                <ol>removeAttribute: Elimina un atributo de un elemento.
+                    <code>elemento.removeAttribute('class');</code>
+                </ol>
+                <p class="subtitulo">Estilos</p>
+                <p>Puedes cambiar los estilos CSS de los elementos utilizando la propiedad 'style'.</p>
+                <code>elemento.style.color = 'red';
+                    elemento.style.fontSize = '20px';</code>
                 <p class="subtitulo">Quinto proyecto: Crear una lista de tareas donde se puedan agregar y eliminar elementos</p>
                 <code>
 
                 </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="eventos">
+            <header>Eventos en JavaScript</header>
+            <article>
+                <p>Los eventos son acciones o sucesos que tienen lugar en el navegador y pueden ser detectados y manipulados con JavaScript.</p>
+                <p class="subtitulo">Escuchando Eventos</p>
+                <p>Puedes utilizar addEventListener para asociar un evento a un elemento.
+                    <code>const boton = document.getElementById('miBoton');
+                        boton.addEventListener('click', function() {
+                            alert('¡Hiciste clic!');
+                        });
+                        </code>
+                </p>
+                <p class="subtitulo">Eventos Comunes</p>
+                <ol>click: Ocurre cuando un elemento es clicado.</ol>
+                <ol>mouseover: Ocurre cuando el puntero del mouse se coloca sobre un elemento.</ol>
+                <ol>keydown: Ocurre cuando una tecla es presionada.</ol>
+                <code>document.addEventListener('keydown', function(event) {
+                    console.log('Tecla presionada: ' + event.key);
+                });</code>
+                <p class="subtitulo"></p>
             </article>
         </section>
 
