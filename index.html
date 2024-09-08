@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentación para JavaScript</title>
+    <title>Documentación básica para JavaScript</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="img/icon.png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -253,10 +253,35 @@
                 </ol>
                 <p class="subtitulo">Bucles</p>
                 <p>Permiten repetir la ejecución de un bloque de código varias veces.</p>
-                <ol>for</ol>
-                <ol>while</ol>
-                <ol>do...while</ol>
-                <ol>for...of</ol>
+                <ol>for: Es el bucle más común, utilizado para iterar un número fijo de veces.
+                    <code>for(let i = 0; i < 5; i++){
+                        console.log(i);
+                    } </code>
+                </ol>
+                <ol>while: Repite el bloque de código mientras una condición sea verdadera.
+                    <code>let i = 0;
+                        while(i < 5){
+                            console.log(i);
+                            i++;
+                        }
+                    </code>
+                </ol>
+                <ol>do...while: Similar a 'while', pero la condición se evalua después de ejecutar el bloque de código, 
+                    garantizando al menos una iteración.
+                    <code>let i = 0;
+                        do{
+                            console.log(i);
+                            i++;
+                        } while (i < 5);
+                    </code>
+                </ol>
+                <ol>for...of: Itera sobre elementos de objetos iterables como arrays.
+                    <code>let numeros = [1, 2, 3, 4];
+                        for(let numero of numeros){
+                            console.log(numero);
+                        }
+                    </code>
+                </ol>
                 <ol>for...in: Itera sobre las propiedades de un objeto.
                     <code>let persona = { nombre: 'Ana', edad: 30 };
                         for(let clave in persona){
